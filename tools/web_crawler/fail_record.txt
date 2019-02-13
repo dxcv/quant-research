@@ -1,0 +1,13 @@
+url, type
+
+http://stock.jrj.com.cn/2011/11/18120411591558.shtml, source
+http://stock.jrj.com.cn/hotstock/2011/11/29211211677977.shtml, source
+http://stock.jrj.com.cn/2011/11/30140611685787.shtml, source
+http://stock.jrj.com.cn/2011/12/01211511703183.shtml, source
+http://stock.jrj.com.cn/2011/12/01193011702826.shtml, source
+http://stock.jrj.com.cn/2011/12/01181811702429.shtml, source
+http://stock.jrj.com.cn/2011/12/01211511703183.shtml, source
+http://stock.jrj.com.cn/2011/12/01193011702826.shtml, source
+http://stock.jrj.com.cn/2011/12/01181811702429.shtml, source
+http://stock.jrj.com.cn/2011/12/02011511704050.shtml, source
+http://stock.jrj.com.cn/2011/12/09085511791333.shtml, source
