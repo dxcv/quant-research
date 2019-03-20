@@ -3,44 +3,46 @@ from tools.data import update
 from tools.data import fetch
 import const
 
-# ----------------更新eod数据（每日都有的数据）----------------------------------------------------------------------------
-update.trade_dates(endTime=const.YESTODAY)
-update.eod_ashare(endTime=const.YESTODAY)
-update.eod_indexes(endTime=const.YESTODAY)
-update.eod_induIndex_citics(endTime=const.YESTODAY)
-update.eod_index_wind(endTime=const.YESTODAY)
-update.eod_citics_industry_type(endTime=const.YESTODAY)  # @ todo 出问题了
-# update.eod_index_constitution(endTime=const.TODAY) # @todo 这个是到20171030就没有数据了
+endTime = const.TODAY
 
-update.future_stock_index_day(endTime=const.YESTODAY)
-update.SPIF_top20_disclose(endTime=const.YESTODAY)
+# ----------------更新eod数据（每日都有的数据）----------------------------------------------------------------------------
+update.trade_dates(endTime=endTime)
+update.eod_ashare(endTime=endTime)
+update.eod_indexes(endTime=endTime)  # 881001只到2017-11-24
+update.eod_induIndex_citics(endTime=endTime)
+update.eod_index_wind(endTime=endTime)
+update.eod_citics_industry_type(endTime=endTime)  # @ todo 出问题了
+# update.eod_index_constitution(endTime=endTime) # @todo 这个是到20171030就没有数据了
+
+update.future_stock_index_day(endTime=endTime)
+update.SPIF_top20_disclose(endTime=endTime)
 
 # ----------------更新事件类数据-----------------------------------------------------------------------------------------
-update.strange_trade(endTime=const.TODAY)
-update.block_trade(endTime=const.TODAY)
-update.major_holder_trade(endTime=const.TODAY)
-update.money_flow(endTime=const.TODAY)
-update.profit_express(endTime=const.TODAY)
-update.earning_estimate(endTime=const.TODAY)
-# update.earningest_consensusdata(endTime=const.TODAY)
+update.strange_trade(endTime=endTime)
+update.block_trade(endTime=endTime)
+update.major_holder_trade(endTime=endTime)
+update.money_flow(endTime=endTime)
+update.profit_express(endTime=endTime)
+update.earning_estimate(endTime=endTime)
+# update.earningest_consensusdata(endTime=endTime)
 
 
 # ----------------更新指数1分钟数据 -------------------------------------------------------------------------------------
 codes = ['000001.SH', '000300.SH', '000905.SH', '000906.SH', '000016.SH',
          '399001.SZ', '399005.SZ', '399006.SZ', ]
 for code in codes:
-    update.index_1min(code,endTime=const.TODAY)
+    update.index_1min(code,endTime=endTime)
 
 for code in codes:
-    update.n_mins_fromDB(code, 5, endTime=const.TODAY)
-    update.n_mins_fromDB(code, 30,endTime=const.TODAY)
-    update.n_mins_fromDB(code, 120, endTime=const.TODAY)
+    update.n_mins_fromDB(code, 5, endTime=endTime)
+    update.n_mins_fromDB(code, 30,endTime=endTime)
+    update.n_mins_fromDB(code, 120, endTime=endTime)
 
 
 # ----------------更新期货行情1分钟数据-----------------------------------------------------------------------------------
 codes = ['IF00.CFE', 'IC00.CFE', 'IH00.CFE', ]
 for code in codes:
-    update.future_stock_index_min(code,endTime=const.TODAY)
+    update.future_stock_index_min(code,endTime=endTime)
 
 
 # ----------------更新个股1分钟数据 -------------------------------------------------------------------------------------

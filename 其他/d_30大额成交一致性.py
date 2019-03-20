@@ -21,6 +21,7 @@ def find_synchron_trade(srcFilepath, rstFilepath):
                 wholeSet.add(elem)
 
     # 统计两个的出现频率
+    print('正在计算两个一组')
     rst2 = {}
     comb2 = itertools.combinations(wholeSet, 2)
 
@@ -32,6 +33,7 @@ def find_synchron_trade(srcFilepath, rstFilepath):
     rstdf2.sort_values(ascending=False, inplace=True)
 
     # 统计三个出现的频率
+    print('正在计算三个一组')
     rst3 = {}
     comb3 = itertools.combinations(wholeSet, 3)
 
@@ -43,6 +45,7 @@ def find_synchron_trade(srcFilepath, rstFilepath):
     rstdf3.sort_values(ascending=False, inplace=True)
 
     # 统计四个出现的频率
+    print('正在计算四个一组')
     df4 = df[df['各基金占比'].apply(len) >= 4]
 
     rst4 = {}
@@ -55,6 +58,7 @@ def find_synchron_trade(srcFilepath, rstFilepath):
     rstdf4.sort_values(ascending=False, inplace=True)
 
     # 统计五个出现的频率
+    print('正在计算五个一组')
     df5 = df[df['各基金占比'].apply(len) >= 5]
     rst5 = {}
     comb5 = df5[df5['各基金占比'].apply(len) == 5]['各基金占比'].apply(tuple).unique()
@@ -66,6 +70,7 @@ def find_synchron_trade(srcFilepath, rstFilepath):
     rstdf5.sort_values(ascending=False, inplace=True)
 
     # 统计六个出现的频率
+    print('正在计算六个一组')
     df6 = df[df['各基金占比'].apply(len) >= 6]
     rst6 = {}
     comb6 = df6[df6['各基金占比'].apply(len) == 6]['各基金占比'].apply(tuple).unique()
@@ -76,6 +81,7 @@ def find_synchron_trade(srcFilepath, rstFilepath):
     rstdf6 = pd.Series(rst6)
     rstdf6.sort_values(ascending=False, inplace=True)
 
+    print('计算完毕，正在保存')
     writer = pd.ExcelWriter(rstFilepath)
     rstdf2.to_excel(writer, startcol=0)
     rstdf3.to_excel(writer, startcol=4)
@@ -89,7 +95,10 @@ if __name__ == '__main__':
 
     # 需要将文件放到 D:\srcdata\大额成交统计 里面，需要输入文件名
     # 文件需要将下面的次数统计删掉
-    srcFilepath = 'D:\\srcdata\\大额成交统计\\201901.xlsx'
-    rstFilepath = 'D:\\rstdata\\30%大额成交组合一致性分析\\一致性分析201901.xlsx'
+    srcFilepath = 'D:\\srcdata\\大额成交统计\\201803-201902.xlsx'
+    rstFilepath = 'D:\\rstdata\\30%大额成交组合一致性分析\\一致性分析201803-201902.xlsx'
+
+    # srcFilepath = 'D:\\srcdata\\大额成交统计\\201902.xlsx'
+    # rstFilepath = 'D:\\rstdata\\30%大额成交组合一致性分析\\一致性分析201902.xlsx'
 
     find_synchron_trade(srcFilepath, rstFilepath)

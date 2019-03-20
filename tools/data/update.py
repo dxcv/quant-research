@@ -204,6 +204,7 @@ def eod_indexes(endTime=const.TODAY):
     updateDict = {'eod_index_000300SH': '000300.SH',
                   'eod_index_000016SH': '000016.SH',
                   'eod_index_000905SH': '000905.SH',
+                  'eod_index_000852SH': '000852.SH',
                   'eod_index_000001SH': '000001.SH',
                   'eod_index_399001SZ': '399001.SZ',
                   'eod_index_399005SZ': '399005.SZ',

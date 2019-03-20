@@ -609,6 +609,7 @@ if __name__ == '__main__':
 
     del df
 
+
 if __name__ == '__main__':
     df = future_stockindex_day_one('IF00.CFE',startTime='2018-01-01')
     dfmin = future_n_min('IF00.CFE',endTime='2016-01-15')

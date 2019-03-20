@@ -17,6 +17,7 @@ IndexTableDict = {'000300.SH':'eod_index_000300SH',
                  '399005.SZ':'eod_index_399005SZ',
                  '399006.SZ':'eod_index_399006SZ',
                  '000906.SH':'eod_index_000906SH',
+                 '000852.SH':'eod_index_000852SH',
                  '881001.WI':'eod_index_881001wi'}
 # 类型和行业指数之间的对应
 InduTypeTableDict = {'citics': 'eod_induindex_citics',
